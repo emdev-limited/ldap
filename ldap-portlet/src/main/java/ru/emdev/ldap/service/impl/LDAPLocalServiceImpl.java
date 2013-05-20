@@ -213,25 +213,40 @@ public class LDAPLocalServiceImpl extends LDAPLocalServiceBaseImpl {
 		directoryService.getChangeLog().setEnabled(false);
 		directoryService.setDenormalizeOpAttrsEnabled(true);
 
-		Partition apachePartition = addPartition("apache", "dc=apache,dc=org");
+		Partition liferayPartition = addPartition("liferay", "dc=liferay,dc=com");
 
 		// Index some attributes on the apache partition
-		addIndex(apachePartition, "objectClass", "ou", "uid");
+		addIndex(liferayPartition, "objectClass", "ou", "uid");
 
 		// And start the service
 		directoryService.startup();
 
-		// Inject the apache root entry
+		// Inject the liferay root entry
 		if (!directoryService.getAdminSession().exists(
-				apachePartition.getSuffixDn())) {
-			DN dnApache = new DN("dc=Apache,dc=Org");
-			ServerEntry entryApache = directoryService.newEntry(dnApache);
-			entryApache.add("objectClass", "top", "domain", "extensibleObject");
-			entryApache.add("dc", "Apache");
-			directoryService.getAdminSession().add(entryApache);
+				liferayPartition.getSuffixDn())) {
+			DN dnLiferay = new DN("dc=liferay,dc=com");
+			ServerEntry entryLiferay = directoryService.newEntry(dnLiferay);
+			entryLiferay.add("objectClass", "top", "domain", "extensibleObject");
+			entryLiferay.add("dc", "liferay");
+			directoryService.getAdminSession().add(entryLiferay);
+		}
+		
+		// create users & groups under Liferay
+		DN dnLiferayUsers = new DN("ou=users,dc=liferay,dc=com");
+		if (!directoryService.getAdminSession().exists(dnLiferayUsers)) {
+			ServerEntry entryLiferayUsers = directoryService.newEntry(dnLiferayUsers);
+			entryLiferayUsers.add("objectClass", "top", "organizationalUnit");
+			entryLiferayUsers.add("ou", "users");
+			directoryService.getAdminSession().add(entryLiferayUsers);
 		}
 
-		// We are all done !
+		DN dnLiferayGroups = new DN("ou=groups,dc=liferay,dc=com");
+		if (!directoryService.getAdminSession().exists(dnLiferayGroups)) {
+			ServerEntry entryLiferayGroups = directoryService.newEntry(dnLiferayGroups);
+			entryLiferayGroups.add("objectClass", "top", "organizationalUnit");
+			entryLiferayGroups.add("ou", "groups");
+			directoryService.getAdminSession().add(entryLiferayGroups);
+		}
 	}
 
 }

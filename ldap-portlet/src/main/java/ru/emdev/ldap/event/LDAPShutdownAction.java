@@ -8,6 +8,12 @@ import com.liferay.portal.kernel.exception.SystemException;
 import com.liferay.portal.kernel.log.Log;
 import com.liferay.portal.kernel.log.LogFactoryUtil;
 
+/**
+ *
+ * TODO - for now shutdown event is not redefined in hook. So, server is not stopped on portlet undeploy
+ * @author akakunin
+ *
+ */
 public class LDAPShutdownAction extends SimpleAction {
 	private static Log log = LogFactoryUtil.getLog(LDAPShutdownAction.class);
 
