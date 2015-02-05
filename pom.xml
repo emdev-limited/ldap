@@ -6,11 +6,11 @@
 	<artifactId>ldap</artifactId>
 	<packaging>pom</packaging>
 	<name>ldap</name>
-	<version>6.1.1.1</version>
+	<version>6.2.1.2</version>
 	
 	<properties>
-		<liferay.version>6.1.1</liferay.version>
-		<liferay.plugin.version>6.1.1</liferay.plugin.version>
+		<liferay.version>6.2.1</liferay.version>
+		<liferay.plugin.version>6.2.1</liferay.plugin.version>
 		<apacheds.version>1.5.7</apacheds.version>		
 	</properties>
 	

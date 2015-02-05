@@ -4,33 +4,38 @@ import ru.emdev.ldap.service.LDAPServiceUtil;
 
 import java.util.Arrays;
 
-
+/**
+ * @author Brian Wing Shun Chan
+ * @generated
+ */
 public class LDAPServiceClpInvoker {
-    private String _methodName20;
-    private String[] _methodParameterTypes20;
-    private String _methodName21;
-    private String[] _methodParameterTypes21;
+    private String _methodName16;
+    private String[] _methodParameterTypes16;
+    private String _methodName17;
+    private String[] _methodParameterTypes17;
 
     public LDAPServiceClpInvoker() {
-        _methodName20 = "getBeanIdentifier";
+        _methodName16 = "getBeanIdentifier";
 
-        _methodParameterTypes20 = new String[] {  };
+        _methodParameterTypes16 = new String[] {  };
 
-        _methodName21 = "setBeanIdentifier";
+        _methodName17 = "setBeanIdentifier";
 
-        _methodParameterTypes21 = new String[] { "java.lang.String" };
+        _methodParameterTypes17 = new String[] { "java.lang.String" };
     }
 
     public Object invokeMethod(String name, String[] parameterTypes,
         Object[] arguments) throws Throwable {
-        if (_methodName20.equals(name) &&
-                Arrays.deepEquals(_methodParameterTypes20, parameterTypes)) {
+        if (_methodName16.equals(name) &&
+                Arrays.deepEquals(_methodParameterTypes16, parameterTypes)) {
             return LDAPServiceUtil.getBeanIdentifier();
         }
 
-        if (_methodName21.equals(name) &&
-                Arrays.deepEquals(_methodParameterTypes21, parameterTypes)) {
+        if (_methodName17.equals(name) &&
+                Arrays.deepEquals(_methodParameterTypes17, parameterTypes)) {
             LDAPServiceUtil.setBeanIdentifier((java.lang.String) arguments[0]);
+
+            return null;
         }
 
         throw new UnsupportedOperationException();

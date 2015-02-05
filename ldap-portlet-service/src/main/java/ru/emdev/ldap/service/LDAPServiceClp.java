@@ -2,7 +2,10 @@ package ru.emdev.ldap.service;
 
 import com.liferay.portal.service.InvokableService;
 
-
+/**
+ * @author Brian Wing Shun Chan
+ * @generated
+ */
 public class LDAPServiceClp implements LDAPService {
     private InvokableService _invokableService;
     private String _methodName0;
@@ -22,6 +25,7 @@ public class LDAPServiceClp implements LDAPService {
         _methodParameterTypes1 = new String[] { "java.lang.String" };
     }
 
+    @Override
     public java.lang.String getBeanIdentifier() {
         Object returnObj = null;
 
@@ -42,6 +46,7 @@ public class LDAPServiceClp implements LDAPService {
         return (java.lang.String) ClpSerializer.translateOutput(returnObj);
     }
 
+    @Override
     public void setBeanIdentifier(java.lang.String beanIdentifier) {
         try {
             _invokableService.invokeMethod(_methodName1,
@@ -59,6 +64,7 @@ public class LDAPServiceClp implements LDAPService {
         }
     }
 
+    @Override
     public java.lang.Object invokeMethod(java.lang.String name,
         java.lang.String[] parameterTypes, java.lang.Object[] arguments)
         throws java.lang.Throwable {

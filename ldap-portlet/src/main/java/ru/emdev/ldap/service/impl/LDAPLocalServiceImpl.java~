@@ -66,12 +66,7 @@ public class LDAPLocalServiceImpl extends LDAPLocalServiceBaseImpl {
 			ldapServer.setDirectoryService(directoryService);
 
 			// Set LDAP port to 10389
-			String portNumStr = PropsUtil.get("ru.emdev.ldap.port");
 			int portNum = PORT_NUM;
-			try {
-				portNum = Integer.valueOf(portNumStr);
-			} catch (Exception ex) {} // ignore error here
-
 			TcpTransport ldapTransport = new TcpTransport(portNum);
 			ldapServer.setTransports(ldapTransport);
 

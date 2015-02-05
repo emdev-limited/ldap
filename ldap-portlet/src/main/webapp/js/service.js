@@ -1,0 +1,1 @@
+Liferay.Service.register("Liferay.Service.ldap", "ru.emdev.ldap.service", "ldap");

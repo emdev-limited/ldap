@@ -9,11 +9,10 @@ import com.liferay.portal.service.BaseLocalService;
 import com.liferay.portal.service.InvokableLocalService;
 
 /**
- * The interface for the l d a p local service.
- *
- * <p>
- * This is a local service. Methods of this service will not have security checks based on the propagated JAAS credentials because this service can only be accessed from within the same VM.
- * </p>
+ * Provides the local service interface for LDAP. Methods of this
+ * service will not have security checks based on the propagated JAAS
+ * credentials because this service can only be accessed from within the same
+ * VM.
  *
  * @author Brian Wing Shun Chan
  * @see LDAPLocalServiceUtil
@@ -45,6 +44,7 @@ public interface LDAPLocalService extends BaseLocalService, InvokableLocalServic
     */
     public void setBeanIdentifier(java.lang.String beanIdentifier);
 
+    @Override
     public java.lang.Object invokeMethod(java.lang.String name,
         java.lang.String[] parameterTypes, java.lang.Object[] arguments)
         throws java.lang.Throwable;

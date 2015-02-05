@@ -3,12 +3,10 @@ package ru.emdev.ldap.service;
 import com.liferay.portal.service.ServiceWrapper;
 
 /**
- * <p>
- * This class is a wrapper for {@link LDAPService}.
- * </p>
+ * Provides a wrapper for {@link LDAPService}.
  *
- * @author    Brian Wing Shun Chan
- * @see       LDAPService
+ * @author Brian Wing Shun Chan
+ * @see LDAPService
  * @generated
  */
 public class LDAPServiceWrapper implements LDAPService,
@@ -24,6 +22,7 @@ public class LDAPServiceWrapper implements LDAPService,
     *
     * @return the Spring bean ID for this bean
     */
+    @Override
     public java.lang.String getBeanIdentifier() {
         return _ldapService.getBeanIdentifier();
     }
@@ -33,10 +32,12 @@ public class LDAPServiceWrapper implements LDAPService,
     *
     * @param beanIdentifier the Spring bean ID for this bean
     */
+    @Override
     public void setBeanIdentifier(java.lang.String beanIdentifier) {
         _ldapService.setBeanIdentifier(beanIdentifier);
     }
 
+    @Override
     public java.lang.Object invokeMethod(java.lang.String name,
         java.lang.String[] parameterTypes, java.lang.Object[] arguments)
         throws java.lang.Throwable {
@@ -44,23 +45,25 @@ public class LDAPServiceWrapper implements LDAPService,
     }
 
     /**
-     * @deprecated Renamed to {@link #getWrappedService}
+     * @deprecated As of 6.1.0, replaced by {@link #getWrappedService}
      */
     public LDAPService getWrappedLDAPService() {
         return _ldapService;
     }
 
     /**
-     * @deprecated Renamed to {@link #setWrappedService}
+     * @deprecated As of 6.1.0, replaced by {@link #setWrappedService}
      */
     public void setWrappedLDAPService(LDAPService ldapService) {
         _ldapService = ldapService;
     }
 
+    @Override
     public LDAPService getWrappedService() {
         return _ldapService;
     }
 
+    @Override
     public void setWrappedService(LDAPService ldapService) {
         _ldapService = ldapService;
     }

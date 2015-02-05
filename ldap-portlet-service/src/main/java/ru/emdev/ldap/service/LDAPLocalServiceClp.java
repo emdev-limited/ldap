@@ -2,7 +2,10 @@ package ru.emdev.ldap.service;
 
 import com.liferay.portal.service.InvokableLocalService;
 
-
+/**
+ * @author Brian Wing Shun Chan
+ * @generated
+ */
 public class LDAPLocalServiceClp implements LDAPLocalService {
     private InvokableLocalService _invokableLocalService;
     private String _methodName0;
@@ -40,6 +43,7 @@ public class LDAPLocalServiceClp implements LDAPLocalService {
         _methodParameterTypes5 = new String[] {  };
     }
 
+    @Override
     public java.lang.String getBeanIdentifier() {
         Object returnObj = null;
 
@@ -60,6 +64,7 @@ public class LDAPLocalServiceClp implements LDAPLocalService {
         return (java.lang.String) ClpSerializer.translateOutput(returnObj);
     }
 
+    @Override
     public void setBeanIdentifier(java.lang.String beanIdentifier) {
         try {
             _invokableLocalService.invokeMethod(_methodName1,
@@ -77,12 +82,14 @@ public class LDAPLocalServiceClp implements LDAPLocalService {
         }
     }
 
+    @Override
     public java.lang.Object invokeMethod(java.lang.String name,
         java.lang.String[] parameterTypes, java.lang.Object[] arguments)
         throws java.lang.Throwable {
         throw new UnsupportedOperationException();
     }
 
+    @Override
     public void startLDAPServer()
         throws com.liferay.portal.kernel.exception.SystemException {
         try {
@@ -104,6 +111,7 @@ public class LDAPLocalServiceClp implements LDAPLocalService {
         }
     }
 
+    @Override
     public void stopLDAPServer()
         throws com.liferay.portal.kernel.exception.SystemException {
         try {
@@ -125,6 +133,7 @@ public class LDAPLocalServiceClp implements LDAPLocalService {
         }
     }
 
+    @Override
     public boolean isLDAPServerStarted() {
         Object returnObj = null;
 
