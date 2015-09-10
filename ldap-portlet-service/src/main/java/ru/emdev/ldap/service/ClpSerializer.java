@@ -74,7 +74,7 @@ public class ClpSerializer {
             }
 
             if (Validator.isNull(_servletContextName)) {
-                _servletContextName = "ldap";
+                _servletContextName = "ldap-portlet";
             }
 
             return _servletContextName;

@@ -90,13 +90,14 @@ public class LDAPLocalServiceImpl extends LDAPLocalServiceBaseImpl {
 	public void stopLDAPServer() throws SystemException {
 		if (ldapServer != null) {
 			try {
+				//directoryService.shutdown();
 				ldapServer.stop();
-				directoryService.shutdown();
 
 				ldapServer = null;
 				directoryService = null;
 			} catch (Exception ex) {
-				throw new SystemException("Cannot stop LDAP server", ex);
+				log.warn("problems with stopping LDAP seriver. Not critical: " + ex.getMessage());
+				log.debug("problems with stopping LDAP server", ex);
 			}
 		}
 	}
